@@ -83,7 +83,7 @@ private:
 Md201xNode::Md201xNode(void)
 {
     auto private_nh = ros::NodeHandle("~");
-    private_nh.param("bid", this->bid);
+    private_nh.getParam("bid", this->bid);
     private_nh.getParam("name", this->name);
 
     this->id_motor_cmd = std::strtol(this->bid.c_str(), NULL, 16);
