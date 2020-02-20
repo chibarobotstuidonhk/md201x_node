@@ -89,7 +89,7 @@ Md201xNode::Md201xNode(void)
     this->id_motor_cmd = std::strtol(this->bid.c_str(), NULL, 16);
     this->id_motor_cmd_val = this->id_motor_cmd + 1;
     this->id_motor_status = this->id_motor_cmd + 3;
-
+    
     _can_tx_pub = _nh.advertise<can_msgs::CanFrame>("can_tx", 10);
     _can_rx_sub = _nh.subscribe<can_msgs::CanFrame>("can_rx", 10, &Md201xNode::canRxCallback, this);
 
